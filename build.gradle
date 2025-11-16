@@ -9,7 +9,8 @@ def appiumVersion = "10.0.0",
     aspectjVersion = "1.9.22.1",
     selenideVersion = "7.5.1",
     restAssuredVersion = "5.5.6",
-    ownerVersion = "1.0.12"
+    ownerVersion = "1.0.12",
+    commonsIoVersion = "2.20.0"
 
 repositories {
     mavenCentral()
@@ -37,6 +38,7 @@ dependencies {
             "org.aspectj:aspectjweaver:$aspectjVersion",
             "com.codeborne:selenide:$selenideVersion",
             "io.rest-assured:rest-assured:$restAssuredVersion",
+            "commons-io:commons-io:$commonsIoVersion",
             "org.aeonbits.owner:owner:$ownerVersion"
     )
 }
