@@ -8,7 +8,7 @@ import org.aeonbits.owner.ConfigFactory;
         "system:properties",
         "system:env",
         "classpath:${platform}.properties",
-        "classpath:android.properties"
+        "classpath:bs-android.properties"
 })
 public interface ProjectConfig extends Config {
 
@@ -37,6 +37,21 @@ public interface ProjectConfig extends Config {
 
     @Key("timeout")
     long timeout();
+
+    @Key("automation.name")
+    String automationName();
+
+    @Key("appium.url")
+    String appiumUrl();
+
+    @Key("app")
+    String app();
+
+    @Key("app.package")
+    String appPackage();
+
+    @Key("app.activity")
+    String appActivity();
 
     @Key("project.name")
     String projectName();
