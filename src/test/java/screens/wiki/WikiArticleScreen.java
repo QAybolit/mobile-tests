@@ -21,7 +21,7 @@ public class WikiArticleScreen {
 
     @Step("Закрыть модальное окно 'Wikipedia games', если оно появилось")
     public WikiArticleScreen closeWikiGamesModalIfExist() {
-        if (this.wikiGamesModal.is(visible, Duration.ofMillis(3000))) {
+        if (this.wikiGamesModal.is(visible, Duration.ofMillis(10000))) {
             this.closeModalButton.click();
         }
         return this;

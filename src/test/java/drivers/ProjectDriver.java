@@ -27,10 +27,10 @@ public class ProjectDriver implements WebDriverProvider {
     @NonNull
     @Override
     public WebDriver createDriver(@NonNull Capabilities capabilities) {
-        String platform = System.getProperty("platform", "bs-android");
+        String platform = System.getProperty("platform", "android");
         return switch (platform) {
-            case "bs-android" -> bsAndroidDriver();
-            case "bs-ios" -> bsIOSDriver();
+            case "android" -> bsAndroidDriver();
+            case "ios" -> bsIOSDriver();
             case "real-device", "emulator" -> localAndroidDriver();
             default -> throw new AssertionError("Передано некорректное название платформы: [" + platform + "]");
         };
@@ -62,15 +62,16 @@ public class ProjectDriver implements WebDriverProvider {
                 .setDeviceName(projectConfig.deviceName())
                 .setApp(getAppPath())
                 .setAppPackage(projectConfig.appPackage())
-                .setAppActivity(projectConfig.appActivity());
+                .setAppActivity(projectConfig.appActivity())
+                .setAutoGrantPermissions(false);
 
         return new AndroidDriver(getServerUrl(), options);
     }
 
     private URL getServerUrl() {
-        String platform = System.getProperty("platform", "bs-android");
+        String platform = System.getProperty("platform", "android");
         try {
-            if (platform.equals("bs-android") || platform.equals("bs-ios")) {
+            if (platform.equals("android") || platform.equals("ios")) {
                 return new URL(String.format(
                         projectConfig.browserstackUrl(),
                         projectConfig.browserstackUser(),
@@ -95,7 +96,7 @@ public class ProjectDriver implements WebDriverProvider {
             try (InputStream in = new URL(appUrl).openStream()) {
                 FileUtils.copyInputStreamToFile(in, app);
             } catch (IOException e) {
-                throw new AssertionError("Не удалось скачать приложение", e);
+                throw new AssertionError("Не удалось скачать приложение [" + projectConfig.app() + "]", e);
             }
         }
         return app.getAbsolutePath();

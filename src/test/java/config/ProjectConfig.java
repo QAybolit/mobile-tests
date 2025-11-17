@@ -8,7 +8,7 @@ import org.aeonbits.owner.ConfigFactory;
         "system:properties",
         "system:env",
         "classpath:${platform}.properties",
-        "classpath:bs-android.properties"
+        "classpath:android.properties"
 })
 public interface ProjectConfig extends Config {
 
@@ -26,9 +26,6 @@ public interface ProjectConfig extends Config {
     @Key("browserstack.url")
     String browserstackUrl();
 
-    @Key("platform.name")
-    String platformName();
-
     @Key("platform.version")
     String platformVersion();
 
@@ -37,9 +34,6 @@ public interface ProjectConfig extends Config {
 
     @Key("timeout")
     long timeout();
-
-    @Key("automation.name")
-    String automationName();
 
     @Key("appium.url")
     String appiumUrl();

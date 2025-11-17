@@ -6,8 +6,8 @@ import static io.restassured.RestAssured.given;
 public class BrowserStack {
 
     public static String videoUrl(String sessionId) {
-        String platform = System.getProperty("platform", "bs-android");
-        if (platform.equals("bs-android") || platform.equals("bs-ios")) {
+        String platform = System.getProperty("platform", "android");
+        if (platform.equals("android") || platform.equals("ios")) {
             String url = String.format("https://api.browserstack.com/app-automate/sessions/%s.json", sessionId);
             return given()
                     .auth().basic(projectConfig.browserstackUser(), projectConfig.browserstackKey())
