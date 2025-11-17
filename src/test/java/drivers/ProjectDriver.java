@@ -32,7 +32,7 @@ public class ProjectDriver implements WebDriverProvider {
             case "bs-android" -> bsAndroidDriver();
             case "bs-ios" -> bsIOSDriver();
             case "real-device", "emulator" -> localAndroidDriver();
-            default -> null;
+            default -> throw new AssertionError("Передано некорректное название платформы: [" + platform + "]");
         };
     }
 
@@ -68,7 +68,7 @@ public class ProjectDriver implements WebDriverProvider {
     }
 
     private URL getServerUrl() {
-        String platform = System.getProperty("platform", "android");
+        String platform = System.getProperty("platform", "bs-android");
         try {
             if (platform.equals("bs-android") || platform.equals("bs-ios")) {
                 return new URL(String.format(

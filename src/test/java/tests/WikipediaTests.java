@@ -13,7 +13,7 @@ public class WikipediaTests extends BaseTest {
 
     @Test
     @DisplayName("Ошибка при поиске статьи о мамонтах")
-    @Tag("Android")
+    @Tag("BsAndroid")
     public void searchArticleAboutMammothWithErrorTest() {
         WikiMainScreen mainScreen = new WikiMainScreen();
         String searchText = "Mammoth";
@@ -21,6 +21,22 @@ public class WikipediaTests extends BaseTest {
         mainScreen.clickSearchButton()
                 .searchArticle(searchText)
                 .chooseArticleInList()
-                .checkArticleErrorScreen(searchText);
+                .checkArticleError(searchText);
+    }
+
+    @Test
+    @DisplayName("Успешный поиск статьи о мамонтах")
+    @Tag("Local")
+    public void searchArticleAboutMammothTest() {
+        WikiMainScreen mainScreen = new WikiMainScreen();
+        String searchText = "Mammoth";
+        String subtitle = "Extinct genus of mammals";
+
+        mainScreen.skipOnboardingIfExist()
+                .clickSearchButton()
+                .searchArticle(searchText)
+                .chooseArticleInList()
+                .closeWikiGamesModalIfExist()
+                .checkArticleScreen(searchText, subtitle);
     }
 }

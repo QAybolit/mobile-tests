@@ -23,9 +23,9 @@ public class WikiSearchScreen {
     }
 
     @Step("Нажать на первый найденый результат в списке статей")
-    public WikiArticleErrorScreen chooseArticleInList() {
+    public WikiArticleScreen chooseArticleInList() {
         this.searchResults.shouldHave(sizeGreaterThan(0)).first().click();
-        return new WikiArticleErrorScreen();
+        return new WikiArticleScreen();
     }
 
 }

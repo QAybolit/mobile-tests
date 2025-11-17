@@ -31,6 +31,7 @@ allure {
 }
 
 dependencies {
+    implementation 'javax.annotation:javax.annotation-api:1.3.2'
     testImplementation(
             "io.appium:java-client:$appiumVersion",
             "io.qameta.allure:allure-selenide:$allureSelenideVersion",
@@ -56,7 +57,7 @@ tasks.withType(Test).configureEach {
 tasks.register("android-test", Test) {
 
     useJUnitPlatform {
-        includeTags("Android")
+        includeTags("BsAndroid")
     }
 }
 
@@ -64,5 +65,12 @@ tasks.register("ios-test", Test) {
 
     useJUnitPlatform {
         includeTags("IOS")
+    }
+}
+
+tasks.register("local-test", Test) {
+
+    useJUnitPlatform {
+        includeTags("Local")
     }
 }
