@@ -5,7 +5,7 @@ import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import screens.wiki.OnboardingScreen;
+import screens.wiki.WikiOnboardingScreen;
 import screens.wiki.WikiMainScreen;
 
 @Owner("Dina")
@@ -29,7 +29,7 @@ public class WikipediaTests extends BaseTest {
     @DisplayName("Прохождение онбординга")
     @Tag("LocalAndroid")
     public void gettingStartedTest() {
-        OnboardingScreen onboardingScreen = new OnboardingScreen();
+        WikiOnboardingScreen onboardingScreen = new WikiOnboardingScreen();
 
         onboardingScreen.checkFirstOnboardingFragment()
                 .clickContinueButton()
@@ -45,7 +45,7 @@ public class WikipediaTests extends BaseTest {
     @DisplayName("Успешный поиск статьи о мамонтах")
     @Tag("LocalAndroid")
     public void searchArticleAboutMammothTest() {
-        OnboardingScreen onboardingScreen = new OnboardingScreen();
+        WikiOnboardingScreen onboardingScreen = new WikiOnboardingScreen();
         String searchText = "Mammoth";
         String subtitle = "Extinct genus of mammals";
 
@@ -61,7 +61,7 @@ public class WikipediaTests extends BaseTest {
     @DisplayName("Поиск несуществующей статьи")
     @Tag("LocalAndroid")
     public void searchNonExistentArticleTest() {
-        OnboardingScreen onboardingScreen = new OnboardingScreen();
+        WikiOnboardingScreen onboardingScreen = new WikiOnboardingScreen();
         String searchText = "lsjkfiaor";
 
         onboardingScreen.skipOnboarding()

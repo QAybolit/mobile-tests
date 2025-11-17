@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
-public class OnboardingScreen {
+public class WikiOnboardingScreen {
 
     private final SelenideElement image = $(AppiumBy.id("org.wikipedia.alpha:id/imageViewCentered"));
     private final SelenideElement addLanguageButton = $(AppiumBy.id("org.wikipedia.alpha:id/addLanguageButton"));
@@ -25,7 +25,7 @@ public class OnboardingScreen {
     }
 
     @Step("Проверить, что первая страница онбординга открылась")
-    public OnboardingScreen checkFirstOnboardingFragment() {
+    public WikiOnboardingScreen checkFirstOnboardingFragment() {
         this.image.shouldBe(visible);
         this.onboardingTitle.shouldBe(visible).shouldHave(text("The Free Encyclopedia …in over 300 languages"));
         this.addLanguageButton.shouldBe(visible);
@@ -35,13 +35,13 @@ public class OnboardingScreen {
     }
 
     @Step("Перейти на следующую страницу онбординга")
-    public OnboardingScreen clickContinueButton() {
+    public WikiOnboardingScreen clickContinueButton() {
         this.continueButton.click();
         return this;
     }
 
     @Step("Проверить, что вторая страница онбординга открылась")
-    public OnboardingScreen checkSecondOnboardingFragment() {
+    public WikiOnboardingScreen checkSecondOnboardingFragment() {
         this.image.shouldBe(visible);
         this.onboardingTitle.shouldBe(visible).shouldHave(text("New ways to explore"));
         this.skipOnboardingButton.shouldBe(visible);
@@ -50,7 +50,7 @@ public class OnboardingScreen {
     }
 
     @Step("Проверить, что третья страница онбординга открылась")
-    public OnboardingScreen checkThirdOnboardingFragment() {
+    public WikiOnboardingScreen checkThirdOnboardingFragment() {
         this.image.shouldBe(visible);
         this.onboardingTitle.shouldBe(visible).shouldHave(text("Reading lists with sync"));
         this.skipOnboardingButton.shouldBe(visible);
@@ -59,7 +59,7 @@ public class OnboardingScreen {
     }
 
     @Step("Проверить, что четвертая страница онбординга открылась")
-    public OnboardingScreen checkFourthOnboardingFragment() {
+    public WikiOnboardingScreen checkFourthOnboardingFragment() {
         this.image.shouldBe(visible);
         this.onboardingTitle.shouldBe(visible).shouldHave(text("Data & Privacy"));
         this.skipOnboardingButton.shouldNotBe(visible);
