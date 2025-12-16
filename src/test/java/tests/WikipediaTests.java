@@ -4,6 +4,7 @@ import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 import screens.wiki.WikiOnboardingScreen;
 import screens.wiki.WikiMainScreen;
@@ -13,7 +14,33 @@ import screens.wiki.WikiMainScreen;
 public class WikipediaTests extends BaseTest {
 
     @Test
-    @DisplayName("Ошибка при поиске статьи о мамонтах")
+    @DisplayName("Проверка поиска")
+    @Tags({@Tag("LocalAndroid"), @Tag("BsAndroid")})
+    public void checkSearchTest() {
+        WikiOnboardingScreen onboardingScreen = new WikiOnboardingScreen();
+        String searchText = "Mammoth";
+
+        onboardingScreen.skipOnboardingIfExist()
+                .clickSearchButton()
+                .searchArticle(searchText)
+                .checkArticleList(searchText);
+    }
+
+    @Test
+    @DisplayName("Поиск несуществующей статьи")
+    @Tag("BsAndroid")
+    public void searchNonExistentArticleTest() {
+        WikiOnboardingScreen onboardingScreen = new WikiOnboardingScreen();
+        String searchText = "lsjkfiaor";
+
+        onboardingScreen.skipOnboardingIfExist()
+                .clickSearchButton()
+                .searchArticle(searchText)
+                .checkArticleListIsEmpty();
+    }
+
+    @Test
+    @DisplayName("Ошибка при открытии статьи о мамонтах")
     @Tag("BsAndroid")
     public void searchArticleAboutMammothWithErrorTest() {
         WikiMainScreen mainScreen = new WikiMainScreen();
@@ -23,6 +50,43 @@ public class WikipediaTests extends BaseTest {
                 .searchArticle(searchText)
                 .chooseArticleInList()
                 .checkArticleError(searchText);
+    }
+
+    @Test
+    @DisplayName("Проверка кнопки 'Saved' в таббаре")
+    @Tag("LocalAndroid")
+    public void checkSavedTabTest() {
+        WikiOnboardingScreen onboardingScreen = new WikiOnboardingScreen();
+
+        onboardingScreen.skipOnboardingIfExist()
+                .clickSavedTab()
+                .checkSavedScreen()
+                .clickExploreTab()
+                .checkMainScreen();
+    }
+
+    @Test
+    @DisplayName("Проверка кнопки 'Search' в таббаре")
+    @Tag("LocalAndroid")
+    public void checkSearchTabTest() {
+        WikiOnboardingScreen onboardingScreen = new WikiOnboardingScreen();
+
+        onboardingScreen.skipOnboardingIfExist()
+                .clickSearchTab()
+                .checkSearchScreen()
+                .clickExploreTab()
+                .checkMainScreen();
+    }
+
+    @Test
+    @DisplayName("Проверка кнопки 'Activity' в таббаре")
+    @Tag("LocalAndroid")
+    public void checkActivityTabTest() {
+        WikiOnboardingScreen onboardingScreen = new WikiOnboardingScreen();
+
+        onboardingScreen.skipOnboardingIfExist()
+                .clickActivityTab()
+                .checkActivityScreen();
     }
 
     @Test
@@ -49,24 +113,11 @@ public class WikipediaTests extends BaseTest {
         String searchText = "Mammoth";
         String subtitle = "Extinct genus of mammals";
 
-        onboardingScreen.skipOnboarding()
+        onboardingScreen.skipOnboardingIfExist()
                 .clickSearchButton()
                 .searchArticle(searchText)
                 .chooseArticleInList()
                 .closeWikiGamesModalIfExist()
                 .checkArticleScreen(searchText, subtitle);
-    }
-
-    @Test
-    @DisplayName("Поиск несуществующей статьи")
-    @Tag("LocalAndroid")
-    public void searchNonExistentArticleTest() {
-        WikiOnboardingScreen onboardingScreen = new WikiOnboardingScreen();
-        String searchText = "lsjkfiaor";
-
-        onboardingScreen.skipOnboarding()
-                .clickSearchButton()
-                .searchArticle(searchText)
-                .checkArticleListIsEmpty();
     }
 }
