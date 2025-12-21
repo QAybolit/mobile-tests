@@ -114,11 +114,11 @@
 ---
 ## <img width="25" alt="telegram" src="media/icons/telegram.svg"> Уведомление в Telegram при помощи бота:
 
-<img alt="Интеграция с Jira" src="media/images/telegram.png">
+<img alt="Интеграция с Telegram" src="media/images/telegram.png">
 <br>
 
 
 ---
 ## <img width="25" alt="Selenoid" src="media/icons/BrowserStack.svg"> Примеры видео выполнения мобильных тестов на BrowserStack:
 
-<img alt="Selenoid video" src="media/gifs/wiki-mobile-test.gif"> 
+<img alt="BrowserStack video" src="media/gifs/wiki-mobile-test.gif"> 
