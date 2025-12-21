@@ -30,9 +30,9 @@
 <a href="https://www.java.com/ru/"><img width="45" alt="Java" src="media/icons/java.svg"></a>
 <a href="https://junit.org/"><img width="45" alt="JUnit5" src="media/icons/Junit5.svg"></a>
 <a href="https://ru.selenide.org/"><img width="45" alt="Selenide" src="media/icons/Selenide.svg"></a>
-<a href="https://ru.selenide.org/"><img width="45" alt="Selenide" src="media/icons/appium.svg"></a>
-<a href="https://ru.selenide.org/"><img width="45" alt="Selenide" src="media/icons/appium_inspector.png"></a>
-<a href="https://ru.selenide.org/"><img width="45" alt="Selenide" src="media/icons/BrowserStack.svg"></a>
+<a href="https://ru.selenide.org/"><img width="45" alt="Appium" src="media/icons/appium.svg"></a>
+<a href="https://ru.selenide.org/"><img width="45" alt="Appium Inspector" src="media/icons/appium_inspector.png"></a>
+<a href="https://ru.selenide.org/"><img width="45" alt="BrowserStack" src="media/icons/BrowserStack.svg"></a>
 <a href="https://allurereport.org/"><img width="45" alt="Allure" src="media/icons/Allure.svg"></a>
 <a href="https://gradle.org/"><img width="45" alt="Gradle" src="media/icons/gradle-original.svg"></a>
 <a href="https://www.jenkins.io/"><img width="45" alt="Jenkins" src="media/icons/jenkins.svg"></a>
@@ -119,6 +119,6 @@
 
 
 ---
-## <img width="25" alt="Selenoid" src="media/icons/Selenoid.svg"> Примеры видео выполнения мобильных тестов на BrowserStack:
+## <img width="25" alt="Selenoid" src="media/icons/BrowserStack.svg"> Примеры видео выполнения мобильных тестов на BrowserStack:
 
 <img alt="Selenoid video" src="media/gifs/wiki-mobile-test.gif"> 
