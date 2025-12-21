@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
@@ -10,7 +11,7 @@ import screens.wiki.WikiOnboardingScreen;
 import screens.wiki.WikiMainScreen;
 
 @Owner("Dina")
-@Story("Android тесты для приложения Wikipedia")
+@Feature("Android тесты для приложения Wikipedia")
 public class WikipediaTests extends BaseTest {
 
     @Test
