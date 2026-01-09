@@ -74,6 +74,8 @@
 ---
 ## <img width="25" alt="Jenkins" src="media/icons/jenkins.svg"> Сборка в Jenkins:
 
+**[Ссылка на сборку в Jenkins](https://jenkins.autotests.cloud/job/mobile-tests-kholomkina)**
+
 <img alt="Сборка в Jenkins" src="media/images/jenkins.png">  
 <br>
 
