@@ -46,13 +46,4 @@ public interface ProjectConfig extends Config {
 
     @Key("app.activity")
     String appActivity();
-
-    @Key("project.name")
-    String projectName();
-
-    @Key("build.name")
-    String buildName();
-
-    @Key("name")
-    String name();
 }
