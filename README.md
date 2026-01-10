@@ -72,18 +72,14 @@
 
 
 ---
-## <img width="25" alt="Jenkins" src="media/icons/jenkins.svg"> Сборка в Jenkins:
-
-**[Ссылка на сборку в Jenkins](https://jenkins.autotests.cloud/job/mobile-tests-kholomkina)**
+## <img width="25" alt="Jenkins" src="media/icons/jenkins.svg"> [Сборка в Jenkins:](https://jenkins.autotests.cloud/job/mobile-tests-kholomkina)
 
 <img alt="Сборка в Jenkins" src="media/images/jenkins.png">  
 <br>
 
 
 ---
-## <img width="25" alt="Allure" src="media/icons/Allure.svg"> Allure отчет:
-
-**[Ссылка на Allure-отчет](https://jenkins.autotests.cloud/job/mobile-tests-kholomkina/4/allure/)**
+## <img width="25" alt="Allure" src="media/icons/Allure.svg"> [Allure отчет:](https://jenkins.autotests.cloud/job/mobile-tests-kholomkina/4/allure/)
 
 **Overview:**
 
@@ -97,10 +93,7 @@
 
 
 ---
-## <img width="25" alt="AllureTestOps" src="media/icons/Allure_TO.svg"> Интеграция с Allure TestOps:
-
-**[Ссылка на Allure TestOps](https://allure.autotests.cloud/project/5059/test-cases?treeId=9888)**
-
+## <img width="25" alt="AllureTestOps" src="media/icons/Allure_TO.svg"> [Интеграция с Allure TestOps:](https://allure.autotests.cloud/project/5059/test-cases?treeId=9888)
 
 **Тест-кейсы:**
 
