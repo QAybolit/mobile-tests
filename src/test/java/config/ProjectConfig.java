@@ -20,30 +20,30 @@ public interface ProjectConfig extends Config {
     @Key("accessKey")
     String browserstackKey();
 
-    @Key("browserstack.app")
+    @Key("browserstackApp")
     String browserstackApp();
 
-    @Key("browserstack.url")
+    @Key("browserstackUrl")
     String browserstackUrl();
 
-    @Key("platform.version")
+    @Key("platformVersion")
     String platformVersion();
 
-    @Key("device.name")
+    @Key("deviceName")
     String deviceName();
 
     @Key("timeout")
     long timeout();
 
-    @Key("appium.url")
+    @Key("appiumUrl")
     String appiumUrl();
 
     @Key("app")
     String app();
 
-    @Key("app.package")
+    @Key("appPackage")
     String appPackage();
 
-    @Key("app.activity")
+    @Key("appActivity")
     String appActivity();
 }
